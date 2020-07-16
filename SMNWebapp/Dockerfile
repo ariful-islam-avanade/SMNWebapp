@@ -11,9 +11,9 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-nanoserver-1903 AS build
 WORKDIR /src
 COPY ["SMNWebapp/SMNWebapp.csproj", "SMNWebapp/"]
-RUN dotnet restore "SMNWebapp/SMNWebapp.csproj"
+#RUN dotnet restore "SMNWebapp/SMNWebapp.csproj"
 COPY . .
-WORKDIR "/src/SMNWebapp"
+WORKDIR "C:/Users/ariful.islam/source/repos/SMNWebapp/SMNWebapp"
 RUN dotnet build "SMNWebapp.csproj" -c Release -o /app/build
 
 FROM build AS publish
